@@ -1,0 +1,102 @@
+
+<!--<table>
+    <tr>
+        <th>School_Id</th>
+        <th>Teacher_Id</th>
+        <th>First_Name</th>
+        <th>Last_Name</th>
+        <th>Date_of_birth </th>
+        <th>Age</th>
+        <th>Qualification</th>
+        <th>Package</th>
+        <th>Address</th>
+        <th>Phone_Number</th>
+        
+        </tr>
+  <tr *ngFor="let t of teacher">
+   
+<td>{{t.School_id}}</td>
+<td>{{t.Teacher_id}}</td>
+  <td>{{t.First_Name}}</td>
+<td>{{t.Last_Name}}</td>
+<td>{{t.Date_of_birth}}</td>
+<td>{{t.Age}}</td>
+<td>{{t.Qualification}}</td>
+<td>{{t.Package}}</td>
+<td>{{t.Address}}</td>
+<td>{{t.Phone_Number}}</td>
+  </tr>
+  </table>-->
+  
+  <!--<form #data="ngForm" (ngSubmit)="onSubmit(data.value)">
+ 
+    <label>TEACHERS </label>
+    <select (change)="fetchclass($event.target.value)"  name="_id" ngModel>
+        <option value="0">TEACHERS</option>
+        <option *ngFor="let teacherslist of teacher" value={{teacherslist._id}} >
+            {{teacherslist.Teacher_Name}}
+        </option>
+    </select>
+
+
+    <label>Class </label>
+    <select (change)="fetchsection($event.target.value)" name="Classe" ngModel >
+        <option value="0">CLASSES</option>
+        <option *ngFor="let classes of class" value={{classes.classes.classname}}>
+            {{classes.classes.classname}}
+        </option>
+    </select>
+
+
+    <label>Section</label>
+    <select (change)="fetchsubjects($event.target.value)" name="Section" ngModel>
+        <option value="0">SECTIONS</option>
+        <option *ngFor="let sections of section" value={{sections}}>
+            {{sections}}
+        </option>
+    </select>
+
+
+    <label>Subject</label>
+    <select  name="Subject" ngModel>
+        <option value="0">Subject</option>
+        <option *ngFor="let sections of subjects" value={{sections}}>
+            {{sections}}
+        </option>
+    </select>
+
+
+   
+<input type="submit" value="update" >
+
+   </form>-->
+   <table>
+       
+       
+    <th>School_Id</th>
+    <th>Teacher_Id</th>     
+       <th>Teacher_Name</th>
+       <th>Class</th>
+       <th>Section</th>
+       <th>Subject</th>
+       <th>Time_In</th>
+       <th>Time_Out</th>
+<tr *ngFor="let teachers of teacher" >
+<td>{{teachers.School_Id}}</td>
+<td>{{teachers.Teacher_Id}}</td>
+<td>{{teachers.Teacher_Name}}</td>
+<td>{{teachers.Class}}</td>
+<td>{{teachers.Section}}</td>
+<td>{{teachers.Subject}}</td>
+<td>{{teachers.Time_In}}</td>
+<td>{{teachers.Time_Out}}</td>
+
+<td><a [routerLink]="['/edit']">EDIT</a></td>
+
+</tr>
+           
+
+
+
+</table>
+<a [routerLink]="['/addteacher']">ADD TEACHER</a>

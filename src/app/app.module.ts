@@ -11,6 +11,11 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { AssignTeacherToClassComponent } from './assign-teacher-to-class/assign-teacher-to-class.component';
 import { AssignStudentToClassComponent } from './assign-student-to-class/assign-student-to-class.component';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
+import { TeacherregComponent } from './teacherreg/teacherreg.component';
+
+import { EditComponent } from './edit/edit.component';
+import { TcComponent } from './tc/tc.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +25,11 @@ import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard
     TeacherComponent,
     AssignTeacherToClassComponent,
     AssignStudentToClassComponent,
-    TeacherDashboardComponent
+    TeacherDashboardComponent,
+    TeacherregComponent,
+    
+    EditComponent,
+    TcComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +57,13 @@ import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard
         {
            path: 'teacherdashboard',component: TeacherDashboardComponent
         },
+        {
+          path:'sudheer',component:TcComponent
+        },
+        {path:"addteacher",component:TeacherregComponent},
+        {path:"edit",component:EditComponent}
+
+
       ])
   ],
   providers: [],
