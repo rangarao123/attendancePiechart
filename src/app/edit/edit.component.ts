@@ -174,9 +174,9 @@ this.fetchclass();
 
     if(confirm("ARE U SURE FOR UPDATE?"))
     {
-      alert(Teacher_Name.Teacher_Name)
-      var tname=Teacher_Name._id;
-      console.log(Teacher_Name)
+      alert(Teacher_Name.Teacher_Id)
+      var tname=Teacher_Name.Teacher_Id;
+      console.log(tname)
       const url="http://10.10.5.54:3004/update"+"/"+tname;
       //const url="http://10.10.5.54:3004/post";
 

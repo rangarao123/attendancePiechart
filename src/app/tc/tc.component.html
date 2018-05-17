@@ -70,26 +70,105 @@
 <input type="submit" value="update" >
 
    </form>-->
-   <table>
-       
-       
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>teacher to class</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {
+height: 500px;
+width:500px;
+font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #2db577;}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.total{
+    background-color:#2db577;
+
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+<style>
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        
+        #customers tr:hover {background-color: #ddd;}
+        
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color:#f29c12;
+            color: white;
+        }
+        
+        </style>
+        
+</head>
+<body>
+        <div class="total ">
+                <h2 >Assigning Teacher to class </h2>
+                </div>
+                
+   <a [routerLink]="['/addteacher']">ADD TEACHER</a>
+
+   <table id="customers">
+
+       <tr>
     <th>School_Id</th>
     <th>Teacher_Id</th>     
-       <th>Teacher_Name</th>
        <th>Class</th>
        <th>Section</th>
        <th>Subject</th>
-       <th>Time_In</th>
-       <th>Time_Out</th>
+       
+       <th>EDIT</th></tr>
 <tr *ngFor="let teachers of teacher" >
 <td>{{teachers.School_Id}}</td>
+
 <td>{{teachers.Teacher_Id}}</td>
-<td>{{teachers.Teacher_Name}}</td>
 <td>{{teachers.Class}}</td>
 <td>{{teachers.Section}}</td>
 <td>{{teachers.Subject}}</td>
-<td>{{teachers.Time_In}}</td>
-<td>{{teachers.Time_Out}}</td>
 
 <td><a [routerLink]="['/edit']">EDIT</a></td>
 
@@ -99,4 +178,7 @@
 
 
 </table>
-<a [routerLink]="['/addteacher']">ADD TEACHER</a>
+
+</body>
+</html>
+
