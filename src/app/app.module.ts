@@ -11,9 +11,17 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { AssignTeacherToClassComponent } from './assign-teacher-to-class/assign-teacher-to-class.component';
 import { AssignStudentToClassComponent } from './assign-student-to-class/assign-student-to-class.component';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
+
 import {FetchTeacherClassComponent} from './fetch-teacher-class/fetch-teacher-class.component';
 import { CookieService } from 'angular2-cookie/core';
 import { StudentsComponent } from './students/students.component';
+
+import { TeacherregComponent } from './teacherreg/teacherreg.component';
+
+import { EditComponent } from './edit/edit.component';
+import { TcComponent } from './tc/tc.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,8 +32,15 @@ import { StudentsComponent } from './students/students.component';
     AssignTeacherToClassComponent,
     AssignStudentToClassComponent,
     TeacherDashboardComponent,
+
     FetchTeacherClassComponent,
     StudentsComponent
+
+    TeacherregComponent,
+
+    EditComponent,
+    TcComponent
+
   ],
   imports: [
     BrowserModule,
@@ -56,11 +71,19 @@ import { StudentsComponent } from './students/students.component';
            path: 'teacherdashboard',component: TeacherDashboardComponent
         },
         {
+
            path: 'fetchteacherclass/:id',component: FetchTeacherClassComponent
         },
         {
            path: 'students',component: StudentsComponent
         },
+
+          path:'sudheer',component:TcComponent
+        },
+        {path:"addteacher",component:TeacherregComponent},
+        {path:"edit",component:EditComponent}
+
+
       ])
   ],
   providers: [CookieService],
