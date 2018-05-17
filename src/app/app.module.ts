@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule} from '@angular/router';
+import { RouterModule, ActivatedRoute, Params} from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HttpModule } from '@angular/http';
@@ -11,6 +11,9 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { AssignTeacherToClassComponent } from './assign-teacher-to-class/assign-teacher-to-class.component';
 import { AssignStudentToClassComponent } from './assign-student-to-class/assign-student-to-class.component';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
+import {FetchTeacherClassComponent} from './fetch-teacher-class/fetch-teacher-class.component';
+import { CookieService } from 'angular2-cookie/core';
+import { StudentsComponent } from './students/students.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,15 +23,19 @@ import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard
     TeacherComponent,
     AssignTeacherToClassComponent,
     AssignStudentToClassComponent,
-    TeacherDashboardComponent
+    TeacherDashboardComponent,
+    FetchTeacherClassComponent,
+    StudentsComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+
     RouterModule.forRoot([
         {
-           path: 'login',component: LoginComponent
+           path: 'login'
+          ,component: LoginComponent
         },
         {
            path: 'admindashboard',component: AdminDashboardComponent
@@ -48,9 +55,15 @@ import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard
         {
            path: 'teacherdashboard',component: TeacherDashboardComponent
         },
+        {
+           path: 'fetchteacherclass/:id',component: FetchTeacherClassComponent
+        },
+        {
+           path: 'students',component: StudentsComponent
+        },
       ])
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
