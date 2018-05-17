@@ -1,0 +1,28 @@
+<div class="total ">
+<h2 >School Name </h2>
+</div>
+
+    <form #f = "ngForm" (ngSubmit) = "onClickSubmit(f.value)" >
+<select (change)="fetchClass($event.target.value)">
+    <option value=0>Class<option>
+      <option *ngFor ="let c of S" value="{{c}}" >
+        {{c}}
+      </option>
+   </select>
+<!--<button  type="submit" click="Submit.click()" value="Submit">Submit</button>-->
+<table id="customers">
+<thead>
+  <th>Student ID</th>
+  <th>Class</th>
+  <th>Section</th>
+  <th>Year</th>
+</thead>
+<tbody>
+  <tr *ngFor="let st of stu">
+  <td>{{st.studentid}}</td>
+  <td>{{st.class}}</td>
+  <td>{{st.section}}</td>
+  <td>{{st.year}}</td>
+</tr>
+</tbody>
+</table>

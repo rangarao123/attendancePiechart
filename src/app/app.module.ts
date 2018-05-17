@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule} from '@angular/router';
+import { RouterModule, ActivatedRoute, Params} from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HttpModule } from '@angular/http';
@@ -11,12 +11,18 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { AssignTeacherToClassComponent } from './assign-teacher-to-class/assign-teacher-to-class.component';
 
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
+
+import {FetchTeacherClassComponent} from './fetch-teacher-class/fetch-teacher-class.component';
+import { CookieService } from 'angular2-cookie/core';
+import { StudentsComponent } from './students/students.component';
+
 import { TeacherregComponent } from './teacherreg/teacherreg.component';
 
 import { EditComponent } from './edit/edit.component';
 import { TcComponent } from './tc/tc.component';
 import { AssignclasstostudentComponent } from './assignclasstostudent/assignclasstostudent.component';
 import { AssignlistComponent } from './assignlist/assignlist.component';
+
 
 @NgModule({
   declarations: [
@@ -27,20 +33,30 @@ import { AssignlistComponent } from './assignlist/assignlist.component';
     TeacherComponent,
     AssignTeacherToClassComponent,
     TeacherDashboardComponent,
+
+    FetchTeacherClassComponent,
+    StudentsComponent
+
     TeacherregComponent,
 
     EditComponent,
+
     TcComponent,
     AssignclasstostudentComponent,
-    AssignlistComponent
+    AssignlistComponent,
+    TcComponent
+
+
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+
     RouterModule.forRoot([
         {
-           path: 'login',component: LoginComponent
+           path: 'login'
+          ,component: LoginComponent
         },
         {
            path: 'admindashboard',component: AdminDashboardComponent
@@ -69,6 +85,13 @@ import { AssignlistComponent } from './assignlist/assignlist.component';
                    },
 
         {
+
+           path: 'fetchteacherclass/:id',component: FetchTeacherClassComponent
+        },
+        {
+           path: 'students',component: StudentsComponent
+        },
+
           path:'sudheer',component:TcComponent
         },
         {path:"addteacher",component:TeacherregComponent},
@@ -77,7 +100,7 @@ import { AssignlistComponent } from './assignlist/assignlist.component';
 
       ])
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

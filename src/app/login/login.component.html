@@ -1,23 +1,19 @@
-
-
-
-
-<form action="/action_page.php">
+ <form #f = "ngForm" (ngSubmit) = "onClickSubmit(f.value)" >
 <div class="total ">
 <h2 >Login Form</h2>
 </div>
   <div class="imgcontainer">
-    <img src="../../assets/profile.png" alt="Avatar" class="avatar">
+    <img src="../../assets/profile.png" alt="Avatar" width="200px" height="300px" class="avatar">
   </div>
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <input type="text" placeholder="Enter Username" name="uname" required ngModel >
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
         <div class="login ">
-    <button type="submit" >Log in </button>
+    <button type="submit"  >Log in </button>
     </div>
     <br>
     <label>
