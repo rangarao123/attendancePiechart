@@ -1,0 +1,38 @@
+
+
+
+
+<table style="width:50%">
+
+
+  <tr>
+    <th>Classes</th>
+    <th>Section</th>
+
+
+  </tr>
+
+
+
+
+  <tr *ngFor = "let students of stu" >
+
+
+
+    <td>{{students.classes}}</td>
+    <td>{{students.section}}</td>
+
+
+
+
+
+    <td [routerLink] = "['/getclass',students.classes,students.section]"><a>Edit</a></td>
+
+
+
+
+  </tr>
+
+</table>
+
+

@@ -1,0 +1,40 @@
+
+
+
+
+<table>
+
+  <th>ID</th>
+  <th>Name</th>
+  <th>Adm number</th>
+  <th>Lastname</th>
+  <th>Mothername</th>
+  <th>Fathername</th>
+  <th>Phonenumber</th>
+  <th>Email</th>
+  <th>Class</th>
+  <th>Bloogroup</th>
+  <th>Address</th>
+
+
+  <tr *ngFor = "let students of student " >
+
+    <td>{{students.stid}}</td>
+    <td>{{students.name}}</td>
+    <td>{{students.admissionnumber}}</td>
+    <td> {{students.lastname}}
+    <td>{{students.mothername}}</td>
+    <td>{{students.fathername}}</td>
+    <td>{{students.phonenumber}}</td>
+    <td>{{students.mailid}}</td>
+    <td>{{students.class}}</td>
+    <td>{{students.bloogroup}}</td>
+    <td>{{students.address}}</td>
+
+
+    <button (click)="addProduct(students.stid)">EDIT</button>
+
+
+
+
+</table>
