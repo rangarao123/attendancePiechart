@@ -1,0 +1,63 @@
+
+
+
+
+
+
+
+<div class="total">
+<h2 >School Name </h2>
+</div>
+
+<form #f = "ngForm" (ngSubmit) = "onClickSubmit(f.value)" >
+<select (change)="fetchClass($event.target.value)">
+<option value=0>Class<option>
+  <option *ngFor ="let c of S" value="{{c}}" >
+    {{c}}
+  </option>
+</select>
+</form>
+
+
+
+
+
+
+
+<div class="abc"  *ngFor ="let st of stu" >
+
+<form id = "formNewProduct" name = "formNewProduct" #ProdutData = "ngForm" (ngSubmit) = "onSub(ProdutData.value)">
+
+
+  <table>
+    <thead>
+    <th>profileimage</th>
+    <th>Present</th>
+    <th>Absent</th>
+
+</thead>
+<tbody><td>
+    <img src="assets/images/profileimage.png" class="rounded-circle" alt="Fjords" width="100" height="100"><br><br>
+
+<input type="text" width="20px" value= {{st.studentid}}/>
+</td>
+    <td>  <label><input type="radio"  value="Present" name="optradio1" ngModel checked >
+Present</label>&nbsp; </td>
+
+    <td>  <label><input type="radio" value="Absent" name="optradio" ngModel >Absent</label></td><br>
+
+</table>
+<input type="submit" value="submit" >
+    </form>
+
+</div>
+
+
+
+
+
+<p>
+  presentview works!
+</p>
+
+<a routerLink = "/presentview">  submit </a>

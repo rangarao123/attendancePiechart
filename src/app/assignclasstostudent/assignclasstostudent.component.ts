@@ -22,7 +22,7 @@ ngOnInit()
      {
 
 
-          this.http.get("http://10.10.5.4:5000/getClass").subscribe((res: Response)
+          this.http.get("http://10.10.5.69:5000/getClass").subscribe((res: Response)
            => {
               this.student = res.json();
              console.log(this.student)
@@ -39,22 +39,17 @@ var data=this.student
  var msg2 = {
 
   classes:data[i].classes.classid,
-   section:data[i].classes.sections[k]
+   section:data[i].classes.sections[i]
 
  }
  console.log(msg2)
  this.stu.push(msg2);
 
- }
-
- }
-
-
-   )}
-
-
-
-
-
 }
+
+ }
+
+)}
+
+
 }

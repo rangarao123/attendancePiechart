@@ -22,6 +22,14 @@ import { EditComponent } from './edit/edit.component';
 import { TcComponent } from './tc/tc.component';
 import { AssignclasstostudentComponent } from './assignclasstostudent/assignclasstostudent.component';
 import { AssignlistComponent } from './assignlist/assignlist.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { PresentviewComponent } from './presentview/presentview.component';
+import { PercentageviewComponent } from './percentageview/percentageview.component';
+
+import { ChartsModule } from 'ng2-charts'
+import { HttpClientModule } from '@angular/common/http';
+import { DropdownviewComponent } from './dropdownview/dropdownview.component';
+import { AssignmentviewComponent } from './assignmentview/assignmentview.component';
 
 
 @NgModule({
@@ -35,7 +43,7 @@ import { AssignlistComponent } from './assignlist/assignlist.component';
     TeacherDashboardComponent,
 
     FetchTeacherClassComponent,
-    StudentsComponent
+    StudentsComponent,
 
     TeacherregComponent,
 
@@ -44,7 +52,12 @@ import { AssignlistComponent } from './assignlist/assignlist.component';
     TcComponent,
     AssignclasstostudentComponent,
     AssignlistComponent,
-    TcComponent
+    TcComponent,
+    AttendanceComponent,
+    PresentviewComponent,
+    PercentageviewComponent,
+    DropdownviewComponent,
+    AssignmentviewComponent
 
 
   ],
@@ -52,6 +65,8 @@ import { AssignlistComponent } from './assignlist/assignlist.component';
     BrowserModule,
     HttpModule,
     FormsModule,
+    ChartsModule,
+   HttpClientModule,
 
     RouterModule.forRoot([
         {
@@ -91,13 +106,25 @@ import { AssignlistComponent } from './assignlist/assignlist.component';
         {
            path: 'students',component: StudentsComponent
         },
-
+{
           path:'sudheer',component:TcComponent
         },
         {path:"addteacher",component:TeacherregComponent},
-        {path:"edit",component:EditComponent}
+        {path:"edit",component:EditComponent},
+      {  path:'attendance',
+        component:AttendanceComponent
+},
+{  path:'percentage',
+  component:PercentageviewComponent
+},
+{   path:'dropdownview',
+ component:DropdownviewComponent
 
+},
+{   path:'assignment',
+ component:  AssignmentviewComponent
 
+}
       ])
   ],
   providers: [CookieService],
